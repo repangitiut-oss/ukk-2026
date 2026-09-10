@@ -22,12 +22,8 @@
                     <td>{{ $no++ }}</td>
                     <td>{{ $kategori->keterangan }}</td>
                     <td>
-                        <a href="{{ route('kategori.edit', ['id' => $kategori->id_kategori]) }}" class="btn btn-success btn-sm">Edit</a>
-                        <form action="{{ route('kategori.delete', ['id' => $kategori->id_kategori]) }}" method="POST" style="display: inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?')">Hapus</button>
-                        </form>
+                        <a href="">edit</a>
+                        <a href="">hapus</a>
                     </td>
     
                 </tr>
