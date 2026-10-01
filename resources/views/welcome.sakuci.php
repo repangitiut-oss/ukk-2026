@@ -1,113 +1,224 @@
 @extends('layouts.app')
 
-@section('title', config('app.name') . ' -- Sistem Peminjaman Alat')
+@section('title', config('app.name') . ' -- Peminjaman Alat Gym')
 
 @section('content')
 
-    {{-- Hero Section dengan Gradasi Modern & Elemen Kaya --}}
-    <section class="py-5 position-relative overflow-hidden text-white" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%); border-radius: 1.5rem; margin-top: 1.5rem; margin-bottom: 3rem;">
-        
-        {{-- Aksen Dekoratif Latar Belakang --}}
-        <div class="position-absolute top-0 start-0 translate-middle rounded-circle bg-primary opacity-25" style="width: 300px; height: 300px; filter: blur(60px);"></div>
-        <div class="position-absolute bottom-0 end-0 translate-middle rounded-circle bg-info opacity-25" style="width: 350px; height: 350px; filter: blur(60px);"></div>
+{{-- Hero Section: Dark Sport Theme --}}
+<section class="py-5" style="background-color: #111111; border-bottom: 4px solid #ff3b30; margin-top: 1rem; margin-bottom: 3rem;">
+    <div class="container py-4">
+        <div class="row align-items-center g-5">
 
-        <div class="container py-5 position-relative z-1">
-            <div class="row align-items-center">
-                <div class="col-lg-7 text-lg-start text-center mb-5 mb-lg-0">
-                    <div class="d-inline-flex align-items-center bg-white bg-opacity-10 backdrop-blur rounded-pill px-3 py-2 mb-4 border border-light border-opacity-10">
-                        <span class="badge bg-success rounded-pill me-2 px-2 py-1">LIVE</span>
-                        <span class="small fw-semibold text-light">SMK Sangkuriang 1 Cimahi</span>
-                    </div>
-
-                    <h1 class="display-4 fw-extrabold mb-3 lh-sm text-white">
-                        The Borrowing Tool <span class="text-info">Workout</span>
-                    </h1>
-
-                    <p class="lead text-light text-opacity-75 mb-4" style="max-width: 600px;">
-                        Solusi digital manajemen peminjaman alat praktik sekolah. Cepat, transparan, dan terstruktur menggunakan kerangka kerja Sakuci PHP OOP murni.
-                    </p>
-
-                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
-                        <a class="btn btn-info text-dark fw-bold px-4 py-3 shadow-lg rounded-pill" href="#fitur">
-                            <i class="bi bi-rocket-takeoff me-2"></i> Jelajahi Fitur
-                        </a>
-                        <a class="btn btn-outline-light fw-semibold px-4 py-3 rounded-pill" href="https://github.com/indrabsus/sakuci-framework" target="_blank">
-                            <i class="bi bi-github me-2"></i> Repositori GitHub
-                        </a>
-                    </div>
+            <div class="col-lg-7 text-lg-start text-center">
+                <div class="mb-3">
+                    <span class="badge px-3 py-2 rounded-0 fw-bold"
+                        style="background-color: #ff3b30; color: #fff; border: 3px solid #fff; box-shadow: 4px 4px 0px #000;">
+                        <span class="me-1">💪</span> SAKUCI FITNESS CENTER
+                    </span>
                 </div>
 
-                {{-- Kolom Kanan: Kartu Statistik / Ringkasan Cepat yang Interaktif --}}
-                <div class="col-lg-5">
-                    <div class="card bg-white bg-opacity-10 backdrop-blur border border-white border-opacity-15 shadow-lg rounded-4 p-4 text-white">
-                        <h5 class="fw-bold mb-4 text-info">📊 Statistik Sistem</h5>
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <div class="p-3 rounded-3 bg-black bg-opacity-25 border border-white border-opacity-10">
-                                    <h3 class="fw-bold text-warning mb-1">45+</h3>
-                                    <p class="small text-light text-opacity-75 mb-0">Total Alat</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="p-3 rounded-3 bg-black bg-opacity-25 border border-white border-opacity-10">
-                                    <h3 class="fw-bold text-success mb-1">12</h3>
-                                    <p class="small text-light text-opacity-75 mb-0">Sedang Dipinjam</p>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="p-3 rounded-3 bg-black bg-opacity-25 border border-white border-opacity-10 d-flex align-items-center justify-content-between">
-                                    <div>
-                                        <h6 class="fw-bold mb-1">Status Sakuci Framework</h6>
-                                        <p class="small text-light text-opacity-75 mb-0">v1.0.0 -- Stable & Ready</p>
-                                    </div>
-                                    <span class="badge bg-success px-3 py-2 rounded-pill">Aktif</span>
-                                </div>
+                <h1 class="display-4 fw-black text-white mb-3"
+                    style="font-weight: 900; letter-spacing: -1px;">
+                    Peminjaman Alat
+                    <span style="background-color: #ff3b30; color: #fff; padding: 0 10px; border: 3px solid #fff; box-shadow: 4px 4px 0px #000; display: inline-block; transform: rotate(-1deg);">
+                        Gym & Fitness
+                    </span>
+                </h1>
+
+                <p class="text-dark lead mb-4 fw-medium"
+                    style="font-size: 1.1rem; max-width: 580px; background-color: #ffffff; padding: 12px; border: 3px solid #000; box-shadow: 4px 4px 0px #ff3b30;">
+                    Platform digital untuk mengelola peminjaman dan sirkulasi alat fitness member secara cepat, transparan, dan terstruktur.
+                </p>
+
+                <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+
+                    <a class="btn fw-bold px-4 py-3 rounded-0"
+                        href="#fitur"
+                        style="background-color: #ff3b30; color: #fff; border: 3px solid #fff; box-shadow: 5px 5px 0px #000; transition: transform 0.1s;"
+                        onmousedown="this.style.transform='translate(2px, 2px)'; this.style.boxShadow='2px 2px 0px #000'"
+                        onmouseup="this.style.transform='translate(0px, 0px)'; this.style.boxShadow='5px 5px 0px #000'">
+                        🔥 JELAJAHI FITUR
+                    </a>
+
+                    <a class="btn fw-bold px-4 py-3 rounded-0"
+                        href="https://github.com/indrabsus/sakuci-framework"
+                        target="_blank"
+                        style="background-color: #ffffff; color: #000; border: 3px solid #fff; box-shadow: 5px 5px 0px #ff3b30;"
+                        onmousedown="this.style.transform='translate(2px, 2px)'; this.style.boxShadow='2px 2px 0px #ff3b30'"
+                        onmouseup="this.style.transform='translate(0px, 0px)'; this.style.boxShadow='5px 5px 0px #ff3b30'">
+                        🐙 GITHUB REPO
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="card rounded-0 p-4"
+                    style="background-color: #1f1f1f; border: 4px solid #fff; box-shadow: 8px 8px 0px #ff3b30;">
+
+                    <h6 class="text-uppercase fw-black mb-3 text-white"
+                        style="font-size: 0.9rem; letter-spacing: 1px; font-weight: 900;">
+                        🏋️‍♂️ STATISTIK FITNESS
+                    </h6>
+
+                    <div class="row g-3">
+
+                        <div class="col-6">
+                            <div class="p-3 rounded-0"
+                                style="background-color: #ffffff; border: 3px solid #000; box-shadow: 4px 4px 0px #ff3b30;">
+                                <h3 class="fw-black text-dark mb-0" style="font-weight: 900;">
+                                    25+
+                                </h3>
+                                <small class="text-dark fw-bold" style="font-size: 0.75rem;">
+                                    TOTAL ALAT
+                                </small>
                             </div>
                         </div>
+
+                        <div class="col-6">
+                            <div class="p-3 rounded-0"
+                                style="background-color: #ff3b30; border: 3px solid #000; box-shadow: 4px 4px 0px #fff;">
+                                <h3 class="fw-black text-white mb-0" style="font-weight: 900;">
+                                    5
+                                </h3>
+                                <small class="text-white fw-bold" style="font-size: 0.75rem;">
+                                    DIPINJAM
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="p-3 rounded-0 d-flex align-items-center justify-content-between"
+                                style="background-color: #ffffff; border: 3px solid #000; box-shadow: 4px 4px 0px #ff3b30;">
+
+                                <div>
+                                    <div class="fw-bold text-dark small">
+                                        Sakuci Framework
+                                    </div>
+
+                                    <span class="text-muted" style="font-size: 0.75rem;">
+                                        v1.0.0 Stable
+                                    </span>
+                                </div>
+
+                                <span class="badge rounded-0 px-2 py-1 fw-bold"
+                                    style="background-color: #28a745; color: #fff; border: 2px solid #000;">
+                                    ONLINE
+                                </span>
+
+                            </div>
+                        </div>
+
                     </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{{-- Fitur --}}
+<section class="container mb-5" id="fitur">
+
+    <div class="mb-4 p-3 d-inline-block"
+        style="background-color: #ff3b30; border: 3px solid #000; box-shadow: 4px 4px 0px #000;">
+
+        <h3 class="fw-black text-white h4 mb-0" style="font-weight: 900;">
+            ✨ FITUR UTAMA GYM
+        </h3>
+
+    </div>
+
+    <div class="row g-4">
+
+        {{-- Fitur 1 --}}
+        <div class="col-md-4">
+            <div class="card h-100 p-3 rounded-0 bg-dark"
+                style="border: 4px solid #000; box-shadow: 6px 6px 0px #ff3b30;">
+
+                <div class="card-body">
+
+                    <div class="mb-3 h3 d-inline-block p-2"
+                        style="background-color: #ff3b30; border: 3px solid #000; box-shadow: 3px 3px 0px #000;">
+
+                        <i class="bi bi-shield-shaded text-white"></i>
+
+                    </div>
+
+                    <h5 class="fw-black text-white h6"
+                        style="font-weight: 900;">
+                        MANAJEMEN ALAT GYM
+                    </h5>
+
+                    <p class="text-white-50 small mb-0 fw-medium">
+                        Pendataan inventaris alat fitness seperti dumbbell,
+                        barbell, dan matras lengkap dengan status kelayakannya.
+                    </p>
+
                 </div>
             </div>
         </div>
-    </section>
 
-    {{-- Section Fitur Unggulan (Grid Lebih Ramai) --}}
-    <section class="container mb-5" id="fitur">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold text-dark">Fitur Unggulan Sistem</h2>
-            <p class="text-muted">Dirancang khusus untuk memudahkan proses inventarisasi sekolah</p>
-        </div>
 
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm h-100 p-4 rounded-4 bg-light border-start border-primary border-4">
-                    <div class="card-body p-0">
-                        <div class="mb-3 text-primary fs-2">🛠️</div>
-                        <h4 class="fw-bold text-dark h5">Manajemen Alat</h4>
-                        <p class="text-secondary small mb-0">Pendataan inventaris alat praktik lengkap dengan kondisi barang, kategori, dan stok secara real-time.</p>
+        {{-- Fitur 2 --}}
+        <div class="col-md-4">
+            <div class="card h-100 p-3 rounded-0 bg-dark"
+                style="border: 4px solid #000; box-shadow: 6px 6px 0px #ffc107;">
+
+                <div class="card-body">
+
+                    <div class="mb-3 h3 d-inline-block p-2"
+                        style="background-color: #ffc107; border: 3px solid #000; box-shadow: 3px 3px 0px #000;">
+
+                        <i class="bi bi-stopwatch text-dark"></i>
+
                     </div>
-                </div>
-            </div>
 
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm h-100 p-4 rounded-4 bg-light border-start border-success border-4">
-                    <div class="card-body p-0">
-                        <div class="mb-3 text-success fs-2">⚡</div>
-                        <h4 class="fw-bold text-dark h5">Peminjaman Kilat</h4>
-                        <p class="text-secondary small mb-0">Alur sirkulasi peminjaman dan pengembalian alat yang cepat tanpa proses yang berbelit-belit.</p>
-                    </div>
-                </div>
-            </div>
+                    <h5 class="fw-black text-white h6"
+                        style="font-weight: 900;">
+                        PEMINJAMAN MEMBER
+                    </h5>
 
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm h-100 p-4 rounded-4 bg-light border-start border-warning border-4">
-                    <div class="card-body p-0">
-                        <div class="mb-3 text-warning fs-2">📂</div>
-                        <h4 class="fw-bold text-dark h5">Struktur MVC Sakuci</h4>
-                        <p class="text-secondary small mb-0">Dibangun bersih menggunakan konsep Route, Model, View, dan Controller murni berbasis PHP OOP.</p>
-                    </div>
+                    <p class="text-white-50 small mb-0 fw-medium">
+                        Pencatatan sirkulasi peminjaman alat fitness oleh member
+                        secara real-time dan terhindar dari kehilangan.
+                    </p>
+
                 </div>
             </div>
         </div>
-    </section>
+
+
+        {{-- Fitur 3 --}}
+        <div class="col-md-4">
+            <div class="card h-100 p-3 rounded-0 bg-dark"
+                style="border: 4px solid #000; box-shadow: 6px 6px 0px #28a745;">
+
+                <div class="card-body">
+
+                    <div class="mb-3 h3 d-inline-block p-2"
+                        style="background-color: #28a745; border: 3px solid #000; box-shadow: 3px 3px 0px #000;">
+
+                        <i class="bi bi-code-square text-white"></i>
+
+                    </div>
+
+                    <h5 class="fw-black text-white h6"
+                        style="font-weight: 900;">
+                        ARSITEKTUR SAKUCI
+                    </h5>
+
+                    <p class="text-white-50 small mb-0 fw-medium">
+                        Dibangun di atas kerangka kerja PHP OOP murni dengan
+                        penerapan konsep MVC yang sangat terstruktur.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 @endsection

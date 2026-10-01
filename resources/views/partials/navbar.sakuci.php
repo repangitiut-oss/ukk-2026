@@ -27,27 +27,38 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        {{-- Tambahkan menu aplikasi Anda di sini --}}
+        {{-- Menu Navigasi Utama --}}
         <div class="collapse navbar-collapse" id="menuUtama">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                 <li class="nav-item">
                     <a class="nav-link {{ is_route('home') ? 'active' : '' }}" href="{{ route('home') }}">Beranda</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ is_route('kategori.index') ? 'active' : '' }}" 
-                    href="{{ route('kategori.index') }}">Kategori</a> 
-                </li>
-                <li>    
-                    <a class="nav-link {{ is_route('alat.index') ? 'active' : '' }}" 
-                    href="{{ route('alat.index') }}">alat</a>
-                </li>    
+
                 @php
                     $currentUser = \App\Models\User::current();
                 @endphp
+
+                {{-- Menu Khusus Admin --}}
+                @if ($currentUser && $currentUser->role === 'admin')
+                    <li class="nav-item">
+                        <a class="nav-link {{ is_route('kategori.index') ? 'active' : '' }}" 
+                        href="{{ route('kategori.index') }}">Kategori</a> 
+                    </li>
+                    <li class="nav-item">    
+                        <a class="nav-link {{ is_route('alat.index') ? 'active' : '' }}" 
+                        href="{{ route('alat.index') }}">Alat</a>
+                    </li>    
+                    <li class="nav-item">    
+                        <a class="nav-link {{ is_route('peminjaman.index') ? 'active' : '' }}" 
+                        href="{{ route('peminjaman.index') }}">Peminjaman</a>
+                    </li>    
+                @endif
+
+                {{-- Status User Login / Non-Login --}}
                 @if ($currentUser)
                     <li class="nav-item">
                         <a class="nav-link {{ is_route('admin.dashboard', 'dashboard') ? 'active' : '' }}"
-                           href="{{ $currentUser->role === 'admin' ? route('admin.dashboard') : route('dashboard') }}">Dashboard</a>
+                            href="{{ $currentUser->role === 'admin' ? route('admin.dashboard') : route('dashboard') }}">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <form method="POST" action="{{ route('logout') }}" class="d-lg-inline">
