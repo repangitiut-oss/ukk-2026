@@ -1,4 +1,4 @@
-﻿/*
+/*
 | Lapisan tema di atas Bootstrap.
 | Bootstrap dimuat lebih dulu, file ini hanya menimpa seperlunya.
 */
@@ -13,7 +13,7 @@ body {
     font-size: 15.5px;
 }
 
-/* Logo kotak di navbar */
+/* Logo kotak di navbar/sidebar */
 .brand-mark {
     display: grid;
     place-items: center;
@@ -55,7 +55,7 @@ body {
     background: var(--brand);
 }
 
-/* Logo navbar merangkap tombol toggle tema gelap/terang. Titik tengah
+/* Logo navbar/sidebar merangkap tombol toggle tema gelap/terang. Titik tengah
    (hijau/merah) tetap menunjukkan status koneksi database seperti biasa;
    cincin luarnya yang berubah warna mengikuti tema aktif. */
 .logo-toggle {
@@ -119,6 +119,56 @@ body {
     background-color: var(--brand-subtle);
     color: var(--brand-dark);
     font-weight: 600;
+}
+
+/* ==========================================
+   STYLING KHUSUS SIDEBAR & TATA LETAK
+   ========================================== */
+
+/* Item Navigasi Sidebar */
+.sidebar .nav-link {
+    color: var(--bs-secondary-color);
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+}
+
+.sidebar .nav-link:hover {
+    color: var(--brand);
+    background-color: var(--bs-tertiary-bg);
+}
+
+/* State Aktif di Sidebar (Garis samping oranye & background halus) */
+.sidebar .nav-link.active {
+    color: var(--brand-dark);
+    background-color: var(--brand-subtle);
+    font-weight: 700;
+    border-left: 4px solid var(--brand);
+}
+
+/* Hapus garis bawah bawaan navbar horizontal jika dipakai di sidebar */
+.sidebar .nav-link.active::after {
+    display: none;
+}
+
+/* Pergeseran Area Utama agar tidak tertutup Sidebar */
+main, .content-wrapper {
+    margin-left: 260px; /* Samakan dengan lebar sidebar */
+    transition: margin-left 0.2s ease;
+}
+
+/* Responsif: Di Layar HP / Tablet */
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative !important;
+        width: 100% !important;
+        min-height: auto !important;
+    }
+
+    main, .content-wrapper {
+        margin-left: 0;
+    }
 }
 
 /* Blok kode */
@@ -244,6 +294,13 @@ code.inline {
     color: #fb923c;
 }
 
+/* Penyesuaian Mode Gelap untuk Sidebar */
+[data-bs-theme="dark"] .sidebar .nav-link.active {
+    background-color: rgba(194, 65, 12, .18);
+    color: #fb923c;
+    border-left-color: #fb923c;
+}
+
 [data-bs-theme="dark"] .demo-box {
     background-color: rgba(194, 65, 12, .18);
     border-color: rgba(194, 65, 12, .4);
@@ -255,4 +312,3 @@ code.inline {
     border-color: rgba(99, 102, 241, .4);
     color: #a5b4fc;
 }
-
